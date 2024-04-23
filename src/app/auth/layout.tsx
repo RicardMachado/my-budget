@@ -1,5 +1,15 @@
+import { Metadata } from 'next'
 import { Calculator } from 'lucide-react'
+
 import { Toaster } from '@/components/ui/toaster'
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | OrçaFácil',
+    default: 'Cadastro',
+  },
+  description: 'Simplificando a forma que criar seu orçamento',
+}
 
 export default function RootLayout({
   children,
