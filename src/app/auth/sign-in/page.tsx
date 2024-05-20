@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { toast } from '@/components/ui/use-toast'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 // export const metadata: Metadata = {
 //   title: 'Login',
@@ -23,18 +23,12 @@ type SignInFormData = z.infer<typeof signInFormSchema>
 
 export default function SignIn() {
   const router = useRouter()
-  const searchParams = useSearchParams()
-  const emailParams = searchParams.get('email')
 
   const {
     register,
     handleSubmit,
     formState: { isSubmitting },
-  } = useForm<SignInFormData>({
-    defaultValues: {
-      email: emailParams ?? '',
-    },
-  })
+  } = useForm<SignInFormData>()
 
   async function handleSignIn(data: SignInFormData) {
     try {
