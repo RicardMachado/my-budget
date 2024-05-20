@@ -24,6 +24,7 @@ type SignInFormData = z.infer<typeof signInFormSchema>
 export default function SignIn() {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const emailParams = searchParams.get('email')
 
   const {
     register,
@@ -31,7 +32,7 @@ export default function SignIn() {
     formState: { isSubmitting },
   } = useForm<SignInFormData>({
     defaultValues: {
-      email: searchParams.get('email') ?? '',
+      email: emailParams ?? '',
     },
   })
 
