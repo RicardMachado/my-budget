@@ -28,8 +28,8 @@ export default function SignUp() {
     formState: { isSubmitting },
   } = useForm<SignUpFormData>()
 
-  function handleLogin() {
-    router.push('/auth/sign-in')
+  function handleLogin(email: string) {
+    router.push(`/auth/sign-in?email=${email}`)
   }
 
   async function handleSignUp(data: SignUpFormData) {
@@ -41,7 +41,10 @@ export default function SignUp() {
         title: 'Cadastro',
         description: 'Cadastro realizado com sucesso!',
         action: (
-          <ToastAction altText="Realizar login" onClick={handleLogin}>
+          <ToastAction
+            altText="Realizar login"
+            onClick={() => handleLogin(data.email)}
+          >
             Login
           </ToastAction>
         ),
