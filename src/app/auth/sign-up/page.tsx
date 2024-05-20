@@ -1,4 +1,5 @@
 'use client'
+
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -9,6 +10,8 @@ import { Label } from '@/components/ui/label'
 import { ToastAction } from '@/components/ui/toast'
 import { toast } from '@/components/ui/use-toast'
 import { useRouter } from 'next/navigation'
+import { Calculator } from 'lucide-react'
+import { ThemeToggle } from '@/components/theme/theme-toggle'
 
 const signUpFormSchema = z.object({
   restaurantName: z.string(),
@@ -61,10 +64,17 @@ export default function SignUp() {
 
   return (
     <div className="p-8">
-      <Button variant="ghost" asChild className="absolute right-8 top-8">
-        <Link href={'/auth/sign-in'}>Fazer login</Link>
-      </Button>
+      <div className="flex items-center gap-4 absolute right-8 top-8">
+        <ThemeToggle />
+        <Button variant="ghost" asChild>
+          <Link href={'/auth/sign-in'}>Fazer login</Link>
+        </Button>
+      </div>
       <div className="w-[350px] flex flex-col justify-center gap-6">
+        <div className="flex items-center justify-center gap-2 text-lg text-foreground">
+          <Calculator className="h-5 w-5" />
+          <span className="font-semibold">OrçaFácil</span>
+        </div>
         <div className="flex flex-col gap-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">
             Criar conta grátis

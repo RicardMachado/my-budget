@@ -1,6 +1,5 @@
 'use client'
 
-// import { Metadata } from 'next'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -10,10 +9,8 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { toast } from '@/components/ui/use-toast'
 import { useRouter } from 'next/navigation'
-
-// export const metadata: Metadata = {
-//   title: 'Login',
-// }
+import { Calculator } from 'lucide-react'
+import { ThemeToggle } from '@/components/theme/theme-toggle'
 
 const signInFormSchema = z.object({
   email: z.string().email(),
@@ -51,10 +48,17 @@ export default function SignIn() {
   }
   return (
     <div className="p-8">
-      <Button variant="ghost" asChild className="absolute right-8 top-8">
-        <Link href={'/auth/sign-up'}>Novo estabelecimento</Link>
-      </Button>
+      <div className="flex items-center gap-4 absolute right-8 top-8">
+        <ThemeToggle />
+        <Button variant="ghost" asChild>
+          <Link href={'/auth/sign-up'}>Novo estabelecimento</Link>
+        </Button>
+      </div>
       <div className="w-[350px] flex flex-col justify-center gap-6">
+        <div className="flex items-center justify-center gap-2 text-lg text-foreground">
+          <Calculator className="h-5 w-5" />
+          <span className="font-semibold">OrçaFácil</span>
+        </div>
         <div className="flex flex-col gap-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">
             Acessar Painel
