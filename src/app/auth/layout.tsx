@@ -17,25 +17,25 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="min-h-screen grid grid-cols-2 antialiased">
-      <div className="h-full border-r border-foreground/5 bg-muted p-16 text-muted-foreground flex flex-col justify-between">
+    <div className="min-h-screen grid sm:grid-cols-2 antialiased">
+      <div className="h-full border-r border-foreground/5 bg-muted p-8 text-muted-foreground flex flex-col justify-between">
         <div className="flex justify-center text-lg text-foreground">
-          <Calculator className="h-[150px] w-[150px]" />
+          <Calculator className=" h-[50px] w-[50px] sm:h-[150px] sm:w-[150px]" />
         </div>
         <div className="flex flex-col p-10 gap-4">
-          <p className="text-2xl font-bold text-justify">
+          <p className="text-sm sm:text-2xl font-bold text-justify">
             Com o OrçaFácil, você tem o poder criar, gerência e enviar
             orçamentos personalizados para seus clientes com facilidade e
             eficiência.
           </p>
-          <p className="text-2xl font-bold text-justify">
+          <p className="text-sm sm:text-2xl font-bold text-justify">
             Esteja você administrando uma pequena empresa ou trabalhando como
             autônomo, nossa plataforma intuitiva oferece todas as ferramentas
             necessárias para tornar o processo de orçamento rápido, preciso e
             profissional.
           </p>
         </div>
-        <footer className="text-sm">
+        <footer className="text-sm text-center">
           Painel do parceiro &copy; OrçaFácil - {new Date().getFullYear()}
         </footer>
       </div>

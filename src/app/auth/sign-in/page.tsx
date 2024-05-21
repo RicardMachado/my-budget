@@ -47,18 +47,21 @@ export default function SignIn() {
     }
   }
   return (
-    <div className="p-8">
-      <div className="flex items-center gap-4 absolute right-8 top-8">
+    <div>
+      <div className="invisible sm:visible sm:flex sm:absolute sm:right-8 sm:top-8">
         <ThemeToggle />
-        <Button variant="ghost" asChild>
-          <Link href={'/auth/sign-up'}>Novo estabelecimento</Link>
-        </Button>
       </div>
-      <div className="w-[350px] flex flex-col justify-center gap-6">
-        <div className="flex items-center justify-center gap-2 text-lg text-foreground">
-          <Calculator className="h-5 w-5" />
-          <span className="font-semibold">OrçaFácil</span>
+      <div className="w-[350px] flex flex-col justify-center gap-6 pb-8">
+        <div className="flex justify-between">
+          <div className="flex items-center justify-center gap-2 text-lg text-foreground">
+            <Calculator className="h-5 w-5" />
+            <span className="font-semibold">OrçaFácil</span>
+          </div>
+          <div className="visible sm:invisible">
+            <ThemeToggle />
+          </div>
         </div>
+
         <div className="flex flex-col gap-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">
             Acessar Painel
@@ -78,6 +81,15 @@ export default function SignIn() {
             Acessar painel
           </Button>
         </form>
+
+        <div className="flex flex-col gap-2 text-center">
+          <p className="text-sm text-muted-foreground">
+            Sem cadastro na plataforma ? Cadastre-se
+          </p>
+          <Button variant="secondary" asChild>
+            <Link href={'/auth/sign-up'}>Novo estabelecimento</Link>
+          </Button>
+        </div>
       </div>
     </div>
   )

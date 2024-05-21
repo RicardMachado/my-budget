@@ -63,17 +63,19 @@ export default function SignUp() {
   }
 
   return (
-    <div className="p-8">
-      <div className="flex items-center gap-4 absolute right-8 top-8">
+    <div>
+      <div className="invisible sm:visible sm:flex sm:absolute sm:right-8 sm:top-8">
         <ThemeToggle />
-        <Button variant="ghost" asChild>
-          <Link href={'/auth/sign-in'}>Fazer login</Link>
-        </Button>
       </div>
-      <div className="w-[350px] flex flex-col justify-center gap-6">
-        <div className="flex items-center justify-center gap-2 text-lg text-foreground">
-          <Calculator className="h-5 w-5" />
-          <span className="font-semibold">OrçaFácil</span>
+      <div className="w-[350px] flex flex-col justify-center gap-6 pb-8">
+        <div className="flex justify-between">
+          <div className="flex items-center justify-center gap-2 text-lg text-foreground">
+            <Calculator className="h-5 w-5" />
+            <span className="font-semibold">OrçaFácil</span>
+          </div>
+          <div className="visible sm:invisible">
+            <ThemeToggle />
+          </div>
         </div>
         <div className="flex flex-col gap-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">
@@ -128,6 +130,15 @@ export default function SignUp() {
             .
           </p>
         </form>
+
+        <div className="flex flex-col gap-2 text-center">
+          <p className="text-sm text-muted-foreground">
+            Já tem cadastro na plataforma?
+          </p>
+          <Button variant="secondary" asChild>
+            <Link href={'/auth/sign-in'}>Realizar Login</Link>
+          </Button>
+        </div>
       </div>
     </div>
   )
