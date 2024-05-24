@@ -33,7 +33,6 @@ export function BudgetStatusChart() {
   ]
 
   return (
-    // <Card className="col-span-4">
     <Card>
       <CardHeader className="pb-8">
         <div className="flex items-center justify-between">

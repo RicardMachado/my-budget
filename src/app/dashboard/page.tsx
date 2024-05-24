@@ -12,7 +12,9 @@ export const metadata: Metadata = {
 export default function Dashboard() {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+      <h1 className="text-xl sm:text-2xl font-bold tracking-tight">
+        Dashboard
+      </h1>
 
       <div className="grid grid-rows-2 md:grid-cols-3 gap-4">
         <div className="grid grid-rows-2 md:col-span-2 gap-4">

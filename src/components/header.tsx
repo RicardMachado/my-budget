@@ -1,13 +1,6 @@
 'use client'
 
-import {
-  AppWindow,
-  BookPlus,
-  Building2,
-  Calculator,
-  Plus,
-  Menu,
-} from 'lucide-react'
+import { AppWindow, Calculator, Plus, Menu } from 'lucide-react'
 
 import { Separator } from './ui/separator'
 import { AccountMenu } from './account-menu'
@@ -48,7 +41,7 @@ export function Header() {
                 <AppWindow className="h-4 w-4 mr-2" />
                 Dashboard
               </DropdownMenuItem>
-              <DropdownMenuItem
+              {/* <DropdownMenuItem
                 onClick={() => router.push('/dashboard/cliente')}
               >
                 <Building2 className="h-4 w-4 mr-2" />
@@ -59,7 +52,7 @@ export function Header() {
               >
                 <BookPlus className="h-4 w-4 mr-2" />
                 Serviços
-              </DropdownMenuItem>
+              </DropdownMenuItem> */}
               <DropdownMenuItem
                 onClick={() => router.push('/dashboard/new-budget')}
               >
@@ -77,7 +70,7 @@ export function Header() {
               Dashboard
             </NavLink>
 
-            <NavLink href={'/dashboard/cliente'}>
+            {/* <NavLink href={'/dashboard/cliente'}>
               <Building2 className="h-4 w-4" />
               Clientes
             </NavLink>
@@ -85,7 +78,7 @@ export function Header() {
             <NavLink href={'/dashboard/services'}>
               <BookPlus className="h-4 w-4" />
               Serviços
-            </NavLink>
+            </NavLink> */}
 
             <NavLink href={'/dashboard/new-budget'}>
               <Plus className="h-4 w-4" />
