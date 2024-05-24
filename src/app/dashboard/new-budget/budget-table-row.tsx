@@ -24,7 +24,7 @@ interface BudgetTableRowProps {
     budgetId: string
     customerName: string
     createdAt: string
-    status: 'sent' | 'approved' | 'running' | 'completed' | 'canceled'
+    status: 'send' | 'approved' | 'running' | 'completed' | 'canceled'
     total: number
   }
 }

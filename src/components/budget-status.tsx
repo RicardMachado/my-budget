@@ -1,5 +1,5 @@
 export type BudgetStatus =
-  | 'sent'
+  | 'send'
   | 'approved'
   | 'running'
   | 'completed'
@@ -10,7 +10,7 @@ interface BudgetStatusProps {
 }
 
 const budgetStatusMap: Record<BudgetStatus, string> = {
-  sent: 'Enviada',
+  send: 'Enviada',
   approved: 'Aprovada',
   running: 'Em Execução',
   completed: 'Concluída',
@@ -20,7 +20,7 @@ const budgetStatusMap: Record<BudgetStatus, string> = {
 export function BudgetStatus({ status }: BudgetStatusProps) {
   return (
     <div className="flex items-center gap-2">
-      {status === 'sent' && (
+      {status === 'send' && (
         <span
           data-testid="badge"
           className="h-2 w-2 rounded-full bg-slate-400"

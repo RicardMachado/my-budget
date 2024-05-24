@@ -10,32 +10,39 @@ import { Pagination } from '@/components/pagination'
 
 import { BudgetTableRow } from './budget-table-row'
 import { BudgetTableFilter } from './budget-table-filters'
+import { BudgetStatus } from '@/components/budget-status'
 
-const result = {
-  budget: [
-    {
-      budgetId: '001',
-      customerName: 'John Smith',
-      createdAt: '2024-05-24',
-      status: 'sent',
-      total: 2800,
-    },
-    {
-      budgetId: '002',
-      customerName: 'John Doe',
-      createdAt: '2024-05-23',
-      status: 'approved',
-      total: 1800,
-    },
-    {
-      budgetId: '003',
-      customerName: 'John OutraCoisa',
-      createdAt: '2024-05-22',
-      status: 'completed',
-      total: 5800,
-    },
-  ],
+type TBudget = {
+  budgetId: string
+  customerName: string
+  createdAt: string
+  status: BudgetStatus
+  total: number
 }
+
+const budget: TBudget[] = [
+  {
+    budgetId: '001',
+    customerName: 'John Smith',
+    createdAt: '2024-05-24',
+    status: 'send',
+    total: 2800,
+  },
+  {
+    budgetId: '002',
+    customerName: 'John Doe',
+    createdAt: '2024-05-23',
+    status: 'approved',
+    total: 1800,
+  },
+  {
+    budgetId: '003',
+    customerName: 'John OutraCoisa',
+    createdAt: '2024-05-22',
+    status: 'completed',
+    total: 5800,
+  },
+]
 
 export default function BudgetTable() {
   function handlePaginate() {}
@@ -64,16 +71,14 @@ export default function BudgetTable() {
             <TableBody>
               {/* {isLoadingOrders && <OrderTableSkeleton />} */}
 
-              {result &&
-                result.budget.map((budget) => {
-                  return (
-                    <BudgetTableRow key={budget.budgetId} budget={budget} />
-                  )
+              {budget &&
+                budget.map((item) => {
+                  return <BudgetTableRow key={item.budgetId} budget={item} />
                 })}
             </TableBody>
           </Table>
         </div>
-        {result && (
+        {budget && (
           <Pagination
             pageIndex={0}
             perPage={1}
