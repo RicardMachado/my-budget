@@ -42,31 +42,33 @@ export function BudgetTableFilter() {
       },
     })
 
-  function handleFilter({
-    budgetId,
-    customerName,
-    status,
-  }: BudgetFiltersSchema) {
-    // setSearchParams((state) => {
-    //   if (budgetId) {
-    //     state.set('budgetId', budgetId)
-    //   } else {
-    //     state.delete('budgetId')
-    //   }
-    //   if (customerName) {
-    //     state.set('customerName', customerName)
-    //   } else {
-    //     state.delete('customerName')
-    //   }
-    //   if (status) {
-    //     state.set('status', status)
-    //   } else {
-    //     state.delete('status')
-    //   }
-    //   state.set('page', '1')
-    //   return state
-    // })
-  }
+  function handleFilter() {}
+
+  // function handleFilter({
+  //   budgetId,
+  //   customerName,
+  //   status,
+  // }: BudgetFiltersSchema) {
+  //   setSearchParams((state) => {
+  //     if (budgetId) {
+  //       state.set('budgetId', budgetId)
+  //     } else {
+  //       state.delete('budgetId')
+  //     }
+  //     if (customerName) {
+  //       state.set('customerName', customerName)
+  //     } else {
+  //       state.delete('customerName')
+  //     }
+  //     if (status) {
+  //       state.set('status', status)
+  //     } else {
+  //       state.delete('status')
+  //     }
+  //     state.set('page', '1')
+  //     return state
+  //   })
+  // }
 
   function handleRemoverFilter() {
     // setSearchParams((state) => {
