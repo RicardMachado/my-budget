@@ -1,7 +1,5 @@
-'use client'
-
 import { Controller, useForm } from 'react-hook-form'
-import { useSearchParams } from 'next/navigation'
+// import { useSearchParams } from 'next/navigation'
 import { z } from 'zod'
 
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -26,11 +24,11 @@ const budgetFiltersSchema = z.object({
 type BudgetFiltersSchema = z.infer<typeof budgetFiltersSchema>
 
 export function BudgetTableFilter() {
-  const searchParams = useSearchParams()
+  // const searchParams = useSearchParams()
 
-  const budgetId = searchParams.get('budgetId')
-  const customerName = searchParams.get('customerName')
-  const status = searchParams.get('status')
+  const budgetId = ''
+  const customerName = ''
+  const status = ''
 
   const { control, register, handleSubmit, reset } =
     useForm<BudgetFiltersSchema>({
