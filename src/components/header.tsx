@@ -54,7 +54,7 @@ export function Header() {
                 Serviços
               </DropdownMenuItem> */}
               <DropdownMenuItem
-                onClick={() => router.push('/dashboard/new-budget')}
+                onClick={() => router.push('/dashboard/budget')}
               >
                 <Plus className="h-4 w-4 mr-2" />
                 Novo Orçamento
