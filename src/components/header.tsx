@@ -80,7 +80,7 @@ export function Header() {
               Serviços
             </NavLink> */}
 
-            <NavLink href={'/dashboard/new-budget'}>
+            <NavLink href={'/dashboard/budget'}>
               <Plus className="h-4 w-4" />
               Novo Orçamento
             </NavLink>
